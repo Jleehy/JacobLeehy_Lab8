@@ -1,0 +1,69 @@
+<!doctype html> 
+<html> 
+
+	<head>
+		<meta charset="utf-8"> 
+		<title>Jleehy Practice2</title> 
+	</head> 
+
+<body>
+    <h1>Practice 2</h1>
+	<p id="color-paragraph">paragraph to be altered</p>
+
+<form>
+        <h2>Background</h2>
+        <label>Red:</label>
+        <input type="text" id="rbg" placeholder="0-255" />
+        <br />
+
+        <label>Green:</label>
+        <input type="text" id="gbg" placeholder="0-255" />
+        <br />
+
+        <label>Blue:</label>
+        <input type="text" id="bbg" placeholder="0-255" />
+        <br />
+
+        <h2>Border</h2>
+        <label>Red:</label>
+        <input type="text" id="bred" placeholder="0-255" />
+        <br />
+
+        <label">Green:</label>
+        <input type="text" id="bgreen" placeholder="0-255" />
+        <br />
+
+        <label>Blue:</label>
+        <input type="text" id="bblue" placeholder="0-255" />
+        <br />
+
+        <label>Border Width:</label>
+        <input type="text" id="width" placeholder="In pixels" />
+        <br />
+
+        <button type="button" onclick="changeColors()">Change style</button>
+    </form>
+
+
+
+    <script>
+        function changeColors() {
+            const redVal = document.getElementById("rbg").value;
+            const greenVal = document.getElementById("gbg").value;
+            const blueVal = document.getElementById("bbg").value;
+
+            const paragraph = document.getElementById("color-paragraph");
+            paragraph.style.backgroundColor = `rgb(${redVal}, ${greenVal}, ${blueVal})`;
+
+            const redVal2 = document.getElementById("bred").value;
+            const greenVal2 = document.getElementById("bgreen").value;
+            const blueVal2 = document.getElementById("bblue").value;
+            const borderWidth = document.getElementById("width").value;
+
+            paragraph.style.borderColor = `rgb(${redVal2}, ${greenVal2}, ${blueVal2})`;
+            paragraph.style.borderWidth = borderWidth + "px";
+            paragraph.style.borderStyle = "solid";
+        }
+    </script>
+</body>
+</html>
